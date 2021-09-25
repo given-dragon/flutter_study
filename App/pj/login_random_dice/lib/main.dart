@@ -48,10 +48,9 @@ class _LogInState extends State<LogIn> {
               top: 50,
             )),
             Center(
-              child: Image(
-                image: AssetImage('image/joonyong.jpg'),
-                width: 170.0,
-                height: 190.0,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('image/joonyong.jpg'),
+                radius: 60.0,
               ),
             ),
             Form(
