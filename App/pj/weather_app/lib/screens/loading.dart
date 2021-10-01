@@ -40,9 +40,14 @@ class _LoadingState extends State<Loading> {
         'https://api.openweathermap.org/data/2.5/weather?lat=${myLocation.myLatitude}&lon=${myLocation.myLongitude}&appid=$APIKEY&units=metric');
     var weatherData = await network.getJsonData();
 
+    Network network2 = Network(
+        'http://api.openweathermap.org/data/2.5/air_pollution?lat=${myLocation.myLatitude}&lon=${myLocation.myLongitude}&appid=$APIKEY');
+    var airData = await network2.getJsonData();
+
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return WeatherScreen(
         parseWeatherData: weatherData,
+        parseAirPolutionData: airData,
       );
     }));
   }
