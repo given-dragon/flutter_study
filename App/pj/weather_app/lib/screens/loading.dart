@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/data/my_location_file.dart';
 import 'package:weather_app/data/network.dart';
 import 'package:weather_app/screens/weather_screen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 const APIKEY = '6119f1abe03cee2df88396a591078c63';
 
@@ -22,13 +23,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: null,
-          child: Text('Get My Location'),
-        ),
-      ),
-    );
+        backgroundColor: Colors.amber,
+        body: Center(
+          child: SpinKitDoubleBounce(
+            color: Colors.white,
+            size: 80.0,
+          ),
+        ));
   }
 
   void getLocation() async {
